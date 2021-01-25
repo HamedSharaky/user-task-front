@@ -1,0 +1,55 @@
+<div *ngIf="request">
+<mat-card>
+  <section>
+    <div class="example-label">Name</div>
+    <div class="example-button-row">
+      <button mat-button disabled>{{request.name}}</button>
+    </div>
+  </section>
+  <mat-divider></mat-divider>
+  <section>
+    <div class="example-label">age</div>
+    <div class="example-button-row">
+      <button mat-button disabled>{{request.age}}</button>
+    </div>
+  </section>
+  <mat-divider></mat-divider>
+  <section>
+    <div class="example-label">salary</div>
+    <div class="example-button-row">
+      <button mat-button disabled>{{request.salary}}</button>
+    </div>
+  </section>
+  <mat-divider></mat-divider>
+  <section>
+    <div class="example-label">joining date</div>
+    <div class="example-button-row">
+      <button mat-button disabled>{{request.joinDate | date:'dd/MM/yyyy'}}</button>
+    </div>
+  </section>
+  <mat-divider></mat-divider>
+  <section>
+    <div class="example-label">position</div>
+    <div class="example-button-row">
+      <button mat-button disabled>{{request.position}}</button>
+    </div>
+  </section>
+  <mat-divider></mat-divider>
+  <section>
+    <div class="example-label">address</div>
+    <div class="example-button-row">
+      <button mat-button disabled>{{request.address}}</button>
+    </div>
+  </section>
+  <mat-divider></mat-divider>
+  <section>
+    <div class="example-label">phone</div>
+    <div class="example-button-row">
+      <button mat-button disabled>{{request.phone}}</button>
+    </div>
+  </section>
+  <mat-divider></mat-divider>
+
+</mat-card>
+</div>
+<button mat-raised-button color="accent" (click)="backUsersList()">back</button>

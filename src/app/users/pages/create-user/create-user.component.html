@@ -1,0 +1,178 @@
+<div *ngIf="request">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      type="text"
+      class="form-control"
+      placeholder="Name"
+      name="nametxt"
+      [(ngModel)]="request.name"
+      #name="ngModel"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Age</mat-label>
+    <input
+      matInput
+      type="number"
+      min="18"
+      max="65"
+      class="form-control"
+      placeholder="age"
+      name="agetxt"
+      [(ngModel)]="request.age"
+      #name="ngModel"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Salary</mat-label>
+    <input
+      matInput
+      type="number"
+      class="form-control"
+      placeholder="salary"
+      name="salarytxt"
+      [(ngModel)]="request.salary"
+      #name="ngModel"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Joining Date</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      class="form-control"
+      placeholder="join date"
+      name="joinDatetxt"
+      [(ngModel)]="request.joinDate"
+      #name="ngModel"
+      required
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select Position</mat-label>
+    <mat-select name="positiontxt" [(ngModel)]="request.position" #name="ngModel">
+      <mat-option *ngFor="let pos of positions" [value]="pos.id">{{ pos.text }}</mat-option>
+      <!-- <mat-option value="two">Second option</mat-option> -->
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Address</mat-label>
+    <input
+      matInput
+      type="text"
+      class="form-control"
+      placeholder="address"
+      name="addresstxt"
+      [(ngModel)]="request.address"
+      #name="ngModel"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <input
+      matInput
+      type="text"
+      class="form-control"
+      placeholder="phone"
+      name="phonetxt"
+      [(ngModel)]="request.phone"
+      #name="ngModel"
+      required
+    />
+  </mat-form-field>
+
+  <!-- <mat-form-field appearance="fill">
+    <mat-label>Select Position</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let pos of positions" [value]="pos.id">{{pos.text}}</mat-option>
+      <mat-option value="two">Second option</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Name"
+    name="nametxt"
+    [(ngModel)]="request.name"
+    #name="ngModel"
+    required
+  />
+  <input
+    type="number"
+    class="form-control"
+    placeholder="age"
+    name="agetxt"
+    [(ngModel)]="request.age"
+    #name="ngModel"
+    required
+  />
+  <input
+    type="number"
+    class="form-control"
+    placeholder="salary"
+    name="salarytxt"
+    [(ngModel)]="request.salary"
+    #name="ngModel"
+    required
+  />
+  <input
+    type="date"
+    class="form-control"
+    placeholder="join date"
+    name="joinDatetxt"
+    [(ngModel)]="request.joinDate"
+    #name="ngModel"
+    required
+  />
+  <input
+    type="text"
+    class="form-control"
+    placeholder="position"
+    name="positiontxt"
+    [(ngModel)]="request.position"
+    #name="ngModel"
+    required
+  />
+  <input
+    type="text"
+    class="form-control"
+    placeholder="address"
+    name="addresstxt"
+    [(ngModel)]="request.address"
+    #name="ngModel"
+    required
+  />
+  <input
+    type="text"
+    class="form-control"
+    placeholder="phone"
+    name="phonetxt"
+    [(ngModel)]="request.phone"
+    #name="ngModel"
+    required
+  /> -->
+</div>
+<div *ngIf="!request">
+  <br />
+  <p>Cannot access this page...</p>
+</div>
+
+<button mat-raised-button color="accent" (click)="sendCreateRequest()">Create</button>
