@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { Shell } from '@app/shell/shell.service';
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { UpdateUserComponent } from './pages/update-user/update-user.component';
@@ -9,10 +10,14 @@ import { UsersListComponent } from './pages/users-list/users-list.component';
 
 const routes: Routes = [
   // Module is lazy loaded, see app-routing.module.ts
-  { path: '', component: UsersListComponent, data: { title: marker('Users') } },
-  { path: 'create', component: CreateUserComponent, data: { title: marker('Create User') } },
-  { path: 'update/:id', component: UpdateUserComponent, data: { title: marker('Uodate User') } },
-  { path: 'details/:id', component: UserDetailsComponent, data: { title: marker('User Details') } },
+ // Shell.childRoutes([
+    //{ path: 'users', redirectTo: '/users', pathMatch: 'full' },
+    { path: '', component: UsersListComponent, data: { title: marker('Users') } },
+    { path: 'create', component: CreateUserComponent, data: { title: marker('Create User') } },
+    { path: 'update/:id', component: UpdateUserComponent, data: { title: marker('Uodate User') } },
+    { path: 'details/:id', component: UserDetailsComponent, data: { title: marker('User Details') } },
+  //]),
+  
 ];
 
 @NgModule({

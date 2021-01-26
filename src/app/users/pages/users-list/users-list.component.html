@@ -16,6 +16,42 @@
       <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
     </ng-container>
 
+     <!-- Age Column -->
+     <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+
+     <!-- Salary Column -->
+     <ng-container matColumnDef="salary">
+      <th mat-header-cell *matHeaderCellDef> Salary </th>
+      <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
+    </ng-container>
+
+     <!-- JoinDate Column -->
+     <ng-container matColumnDef="joinDate">
+      <th mat-header-cell *matHeaderCellDef> JoinDate </th>
+      <td mat-cell *matCellDef="let element"> {{element.joinDate}} </td>
+    </ng-container>
+    
+     <!-- Position Column -->
+     <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> Position </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+     <!-- Address Column -->
+     <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+    </ng-container>
+
+     <!-- Phone Column -->
+     <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef> Phone </th>
+      <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+    </ng-container>
+
      <!-- Operations Column -->
      <ng-container matColumnDef="operations">
         <th mat-header-cell *matHeaderCellDef> Operations </th>

@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from '@app/users/services/users.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { UserListDto } from '@app/users/models/users-list-model';
 
 @Component({
   selector: 'app-users-list',
@@ -10,7 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./users-list.component.scss'],
 })
 export class UsersListComponent implements OnInit {
-  displayedColumns: string[] = ['userId', 'name', 'operations'];
+  displayedColumns: string[] = ['userId', 'name', 'age','salary','joinDate','position','address','phone', 'operations'];
   dataSource: any[];
 
   constructor(private userService: UsersService, private router: Router, private chDetector: ChangeDetectorRef) {}
@@ -21,8 +22,9 @@ export class UsersListComponent implements OnInit {
 
   loadUsersData() {
     this.userService.getAll().subscribe((res) => {
-      if (res && res.user && res.user.length > 0) {
-        this.dataSource = res.user;
+      //debugger
+      if (res && res.usersDto && res.usersDto.length > 0) {
+        this.dataSource = res.usersDto;
       }
     });
   }
